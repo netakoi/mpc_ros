@@ -1,10 +1,11 @@
-# Model Predictive Control implementation about ROS 
+# Model Predictive Control implementation about ROS
+# Forked
 
 
 
 ## Abstract
 
-This repository is implemented with mobile robot model from bycycle to the unicycle which means differential drive wheeled mobile robot for promising tracking performance. For running this NMPC algorithm, you can use the GAZEBO simulatior or customized mobile robot and compare with DWA algorithm given defalut local planner in ROS. 
+This repository is implemented with mobile robot model from bycycle to the unicycle which means differential drive wheeled mobile robot for promising tracking performance. For running this NMPC algorithm, you can use the GAZEBO simulatior or customized mobile robot and compare with DWA algorithm given defalut local planner in ROS.
 
 
 ## Features
@@ -14,21 +15,21 @@ This repository is implemented with mobile robot model from bycycle to the unicy
 
 ### Installation
 1. Ubuntu 18.04
-2. Install ROS Melodic 
-3. Install ROS dependencies: 
+2. Install ROS Melodic
+3. Install ROS dependencies:
 ```
 sudo apt install ros-melodic-costmap-2d  ros-melodic-move-base ros-melodic-global-planner ros-melodic-amcl
 ```
 4. Install Ipopt: Please refer the tutorial in "document/ipopt_install".  
-5. create your own catkin_ws and clone the repositories. 
+5. create your own catkin_ws and clone the repositories.
 ```
-git clone https://github.com/Geonhee-LEE/mpc_ros.git 
+git clone https://github.com/Geonhee-LEE/mpc_ros.git
 git clone https://github.com/NSCL/servingbot_ros
 ```
 
 ## Launch
 
-### Run Navigation algorithm with MPC in simulation: 
+### Run Navigation algorithm with MPC in simulation:
 ```
 roslaunch mpc_ros nav_gazebo.launch
 ```
@@ -57,4 +58,3 @@ License: Apache 2.0
 ### Reference
 
 HyphaROS MPC MiniCar(https://hypharosworkshop.wordpress.com/)
-
