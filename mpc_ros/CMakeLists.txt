@@ -5,7 +5,7 @@ project(mpc_ros)
 add_definitions(-std=c++11 -O3)
 
 # options for build configuration
-option(BUILD_EXAMPLE "Whether or not building the CppAD & Ipopt example" OFF) 
+option(BUILD_EXAMPLE "Whether or not building the CppAD & Ipopt example" OFF)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -44,7 +44,7 @@ include_directories(/usr/include)
 link_directories(/usr/lib)
 
 
-# General MPC_Node 
+# General MPC_Node
 ADD_EXECUTABLE( MPC_Node src/MPC.cpp src/MPC_Node.cpp )
 TARGET_LINK_LIBRARIES(MPC_Node ipopt ${catkin_LIBRARIES} )
 
@@ -61,8 +61,9 @@ add_executable(Pure_Pursuit src/Pure_Pursuit.cpp)
 target_link_libraries(Pure_Pursuit ${catkin_LIBRARIES})
 
 # Own Global planner for tracking desired trajectory
- add_library(global_planner_lib src/global_planner/global_planner.cpp)
- TARGET_LINK_LIBRARIES(global_planner_lib ipopt ${catkin_LIBRARIES} )
+#add_executable(global_planner src/global_planner/global_planner.cpp)
+add_library(global_planner_lib src/global_planner/global_planner.cpp)
+TARGET_LINK_LIBRARIES(global_planner_lib ipopt ${catkin_LIBRARIES} )
 
 #############
 ## Example ##
@@ -70,7 +71,7 @@ target_link_libraries(Pure_Pursuit ${catkin_LIBRARIES})
 if(BUILD_EXAMPLE)
     ADD_EXECUTABLE( CppAD_started example/CppAD_started.cpp )
     TARGET_LINK_LIBRARIES(CppAD_started)
-    
+
     ADD_EXECUTABLE( CppAD_Ipopt example/CppAD_Ipopt.cpp )
     TARGET_LINK_LIBRARIES(CppAD_Ipopt ipopt)
 endif(BUILD_EXAMPLE)
