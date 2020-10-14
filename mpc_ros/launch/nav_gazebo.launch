@@ -52,7 +52,7 @@ Other 1.4%
     <param name="use_sim_time" value="true"/>
     <arg name="controller"  default="mpc" doc="opt: dwa, mpc, pure_pursuit"/>
     <arg name="model"  default="serving_bot" doc="opt: serving_bot"/>
-    <arg name="tf_prefix"  default=""/>
+    <arg name="tf_prefix"  default="mpc_ros"/>
 
     <!--  ************** GAZEBO Simulator ***************  -->
     <arg name="x_pos" default="0.0"/>
